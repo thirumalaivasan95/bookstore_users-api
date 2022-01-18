@@ -14,7 +14,6 @@ func GetUser(userId int64) (*users.User, *errors.RestErr) {
 }
 
 func CreateUser(user users.User) (*users.User, *errors.RestErr) {
-	// return &user, nil
 	if err := user.Validate(); err != nil {
 		return nil, err
 	}
@@ -23,7 +22,4 @@ func CreateUser(user users.User) (*users.User, *errors.RestErr) {
 		return nil, err
 	}
 	return &user, nil
-	// return &user, &errors.RestErr{
-	// 	Status: http.StatusInternalServerError,
-	// }
 }
